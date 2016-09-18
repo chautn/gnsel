@@ -1,0 +1,9 @@
+{
+	"locators": [
+		{"key":"body", "use":"tagName", "expr":"body"},
+		{"key":"table", "use":"xpath", "expr":"//table"}
+	],
+	"messages": [
+		{"key":"heading", "message":"This is a sample page"}
+	]
+}
