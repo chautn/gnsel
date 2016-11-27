@@ -2,17 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>gnsel</groupId>
-	<artifactId>gnc-selenium-support</artifactId>
+	<artifactId>gnsel-selenium-support</artifactId>
 	<version>1.0</version>
-	<name>GNC Selenium Support</name>
+	<name>GNSEL Selenium Support</name>
 	<packaging>jar</packaging>
-	<description>GNC Selenium Support</description>
+	<description>GNSEL Selenium Support</description>
 
 	<properties>
 		<selenium-java.version>2.53.0</selenium-java.version>
 		<testng.version>6.9.4</testng.version>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 

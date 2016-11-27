@@ -69,7 +69,9 @@ public class SeleniumTest {
 				browser = "firefox";
 				break;
 		}
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		int implicit_timeout = (config.getProperty("implicit_timeout") != null)? 
+				Integer.parseInt(config.getProperty("implicit_timeout")) : 5;
+		driver.manage().timeouts().implicitlyWait(implicit_timeout, TimeUnit.SECONDS);
 		pause(5000);
 		driver.manage().window().maximize(); //this does not work with Marionette???
 	}

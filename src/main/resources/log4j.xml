@@ -21,16 +21,24 @@
 			<param name="ConversionPattern" value="%d [%p] %C.%M() - %m%n" />
 		</layout>
 	</appender>
-	<logger name="com.fsoft.jiemdp" additivity="false">
+	<appender name="TestNG" class="gnsel.logging.TestNGReportAppender">
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%m" />
+		</layout>
+	</appender>
+	<logger name="gnsel" additivity="false">
         <level value="DEBUG"/>
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
+        <appender-ref ref="TestNG"/>
     </logger>
 
 	<root>
 		<priority value="INFO" />
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="FILE" />
+        <appender-ref ref="TestNG"/>
 	</root>
 
 </log4j:configuration>
