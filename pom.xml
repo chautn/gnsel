@@ -9,7 +9,8 @@
 	<description>GNSEL Selenium Support</description>
 
 	<properties>
-		<selenium-java.version>2.53.0</selenium-java.version>
+		<!--<selenium-java.version>2.53.0</selenium-java.version>-->
+		<selenium-java.version>3.0.1</selenium-java.version>
 		<testng.version>6.9.4</testng.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>

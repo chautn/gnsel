@@ -18,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -57,23 +58,27 @@ public class SeleniumTest {
 				driver = new ChromeDriver();
 				browser = "chrome";
 				break;
-			case "marionette": //firefox 47+
+			case "firefox": //firefox 47+
 				if (System.getProperty("webdriver.gecko.driver") == null) {
 					System.setProperty("webdriver.gecko.driver", config.getProperty("webdriver.gecko.driver"));
 				}
 				driver = new MarionetteDriver();
-				browser = "marionette";
-				break;
-			case "firefox": default: //firefox older than 47
-				driver = new FirefoxDriver();
 				browser = "firefox";
+				break;
+			case "safari": //only Safari 10+
+				driver = new SafariDriver();
+				browser = "safari";
+				break;
+			default: //firefox 45 or older
+				driver = new FirefoxDriver();
+				browser = "firefox-";
 				break;
 		}
 		int implicit_timeout = (config.getProperty("implicit_timeout") != null)? 
 				Integer.parseInt(config.getProperty("implicit_timeout")) : 5;
 		driver.manage().timeouts().implicitlyWait(implicit_timeout, TimeUnit.SECONDS);
 		pause(5000);
-		driver.manage().window().maximize(); //this does not work with Marionette???
+		driver.manage().window().maximize();
 	}
 	@AfterMethod
 	public void teardown() {

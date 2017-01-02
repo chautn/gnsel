@@ -20,3 +20,4 @@ pom.xml.versionsBackup
 *~
 .DS_Store
 transaction.log
+test-output
